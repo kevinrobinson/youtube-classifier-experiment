@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import qs from 'query-string';
 import './App.css';
 
@@ -15,6 +16,7 @@ export default class App extends Component {
     this.onQueryChange = this.onQueryChange.bind(this);
     this.onFetchDone = this.onFetchDone.bind(this);
     this.onFetchError = this.onFetchError.bind(this);
+    this.throttledFetch = _.throttle(this.throttledFetch, 100);
   }
 
   componentDidMount() {
@@ -24,10 +26,12 @@ export default class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.apiKey && prevState.query !== this.state.query) this.fetch();
+    if (this.state.apiKey && prevState.query !== this.state.query) {
+      this.throttledFetch();
+    }
   }
 
-  fetch() {
+  throttledFetch() {
     const {query} = this.state;
     const endpoint = 'https://services-edu.herokuapp.com/youtube/search';
     const url = `${endpoint}?q=${query}`;
