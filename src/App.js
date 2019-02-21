@@ -30,7 +30,7 @@ export default class App extends Component {
   fetch() {
     const {query} = this.state;
     const endpoint = 'https://services-edu.herokuapp.com/youtube/search';
-    const url = `${endpoint}?part=snippet&q=${query}`;
+    const url = `${endpoint}?q=${query}`;
 
     const headers = {'X-Services-Edu-Api-Key': 'abc'};
     fetch(url, {headers})
@@ -68,7 +68,7 @@ export default class App extends Component {
     return (
       <div>
         <div>You need an API key to get started.</div>
-        <div>When you get one, add it to the URL like `localhost:3000/videos?api_key=abc`</div>
+        <div>When you get one, add it to the URL like `localhost:3000/use?api_key=abc`</div>
       </div>
     );
   }

@@ -2,6 +2,12 @@
 
 A React project for experimenting with YouTube.  Uses https://github.com/kevinrobinson/services-edu to search YouTube.
 
+### Demo
+https://youtube-classifier-experiment.herokuapp.com/
+
+![dogs](docs/videos1.png)
+
+![cats](docs/videos2.png)
 
 ## Getting started
 ### `npm start`
