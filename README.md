@@ -1,3 +1,5 @@
+(deprecated, see https://github.com/kevinrobinson/services-edu-experiments)
+
 # youtube-classifier-experiment
 
 A React project for experimenting with YouTube.  Uses https://github.com/kevinrobinson/services-edu to search YouTube.
